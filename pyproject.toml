@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyboo"
+version = "1.0.1"
+description = "A Python package to compute bond orientational order parameters"
+readme = "README.rst"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Mathieu Leocmach", email = "mathieu.leocmach@univ-lyon1.fr" }
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+]
+keywords = ["structure", "crystallography", "glass"]
+dependencies = [
+    "numpy",
+    "scipy >= 0.18",
+    "numba",
+]
+
+[project.optional-dependencies]
+dev = ["check-manifest"]
+test = ["pytest"]
+doc = ["sphinx", "nbsphinx"]
+
+[project.urls]
+homepage = "https://github.com/MathieuLeocmach/pyboo"
+
+[tool.setuptools.package-data]
+sample = [
+    "examples/AR-Res06A_scan2_t890.xyz",
+    "examples/crystal-gel.ipynb",
+    "examples/3d_6_0.54_0.dat",
+    "examples/periodic_glass.ipynb",
+]
